@@ -20,6 +20,7 @@
     <string name="text_amount">Money</string>
 
     <string name="text_enter_user">Enter User ID</string>
+    <string name="text_enter_prod">Enter Product ID</string>
     <string name="_0">0</string>
 
     <string name="text_but_find">Find</string>

@@ -24,8 +24,8 @@ public class BuyFragment extends Fragment {
         binding = FragmentBuyBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textBuy;
-        buyViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+//        final TextView textView = binding.textBuy;
+//        buyViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
