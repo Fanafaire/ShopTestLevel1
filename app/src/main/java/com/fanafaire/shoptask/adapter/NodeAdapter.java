@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,7 +12,6 @@ import com.fanafaire.shoptask.R;
 import com.fanafaire.shoptask.nodes.ProductNode;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.ViewHolder>{
 
