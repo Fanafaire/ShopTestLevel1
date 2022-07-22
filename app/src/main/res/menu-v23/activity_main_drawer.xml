@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@android:drawable/btn_star"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="?android:attr/fingerprintAuthDrawable"
+            android:title="@string/menu_gallery" />
+        <item
+            android:id="@+id/nav_buy"
+            android:icon="?attr/actionModeCopyDrawable"
+            android:title="@string/menu_buy" />
+        <item
+            android:id="@+id/nav_user_prod"
+            android:icon="?android:attr/actionModeWebSearchDrawable"
+            android:title="@string/menu_user_prod" />
+        <item
+            android:id="@+id/nav_prod_user"
+            android:icon="?android:attr/actionModeWebSearchDrawable"
+            android:title="@string/menu_prod_user" />
+    </group>
+</menu>

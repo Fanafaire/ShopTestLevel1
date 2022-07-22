@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.fanafaire.shoptask.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.fanafaire.shoptask.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_buy"
+        android:name="com.fanafaire.shoptask.ui.buy.BuyFragment"
+        android:label="@string/menu_buy"
+        tools:layout="@layout/fragment_buy" />
+
+    <fragment
+        android:id="@+id/nav_user_prod"
+        android:name="com.fanafaire.shoptask.ui.userProd.UserProdFragment"
+        android:label="@string/menu_user_prod"
+        tools:layout="@layout/fragment_user_prod" />
+
+    <fragment
+        android:id="@+id/nav_prod_user"
+        android:name="com.fanafaire.shoptask.ui.prodUser.ProdUserFragment"
+        android:label="@string/menu_prod_user"
+        tools:layout="@layout/fragment_prod_user" />
+</navigation>
