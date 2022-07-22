@@ -6,17 +6,163 @@
     android:layout_height="match_parent"
     tools:context=".ui.userProd.UserProdFragment">
 
-    <TextView
-        android:id="@+id/text_user_prod"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:scrollbars="horizontal"
+
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/prodHeader"
+        tools:listitem="@layout/recyclerview_item" />
+
+    <LinearLayout
+        android:id="@+id/find_prod"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/text_enter_user" />
+
+        <EditText
+            android:id="@+id/editTextNumber"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/_0"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:textColorHint="#757575" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#661976D2"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/text_but_find"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/userHeader"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/find_prod"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/find_prod">
+
+        <TextView
+            android:id="@+id/text_header_id"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:text="@string/text_id" />
+
+        <TextView
+            android:id="@+id/text_header_name"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:text="@string/text_name" />
+
+        <TextView
+            android:id="@+id/text_header_amount"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="15dp"
+            android:text="@string/text_amount" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/userInfo"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/find_prod"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userHeader">
+
+        <TextView
+            android:id="@+id/user_id"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/text_empty" />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/text_no_info" />
+
+        <TextView
+            android:id="@+id/user_amount"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="15dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/text_empty" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/prodHeader"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/find_prod"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userInfo">
+
+        <TextView
+            android:id="@+id/text_prod_id"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:text="@string/text_id" />
+
+        <TextView
+            android:id="@+id/text_prod_name"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:text="@string/text_name" />
+
+        <TextView
+            android:id="@+id/text_prod_amount"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="15dp"
+            android:text="@string/text_price" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

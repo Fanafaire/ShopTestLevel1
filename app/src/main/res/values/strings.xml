@@ -18,4 +18,12 @@
     <string name="text_price">Price</string>
 
     <string name="text_amount">Money</string>
+
+    <string name="text_enter_user">Enter User ID</string>
+    <string name="_0">0</string>
+
+    <string name="text_but_find">Find</string>
+
+    <string name="text_empty"> </string>
+    <string name="text_no_info">No info yet</string>
 </resources>
