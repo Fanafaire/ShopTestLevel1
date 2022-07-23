@@ -16,12 +16,10 @@ public class DataStorage {
     public DataStorage(){
         products = setProductsData();
         users = setUsersData();
-//        this.context = context;
 
         products.get(1).addUser(2);
         products.get(2).addUser(2);
         products.get(1).addUser(1);
-
 
         users.get(1).addProduct(1);
         users.get(1).addProduct(1);
@@ -30,18 +28,6 @@ public class DataStorage {
         users.get(2).addProduct(3);
         users.get(2).addProduct(3);
     }
-
-//    public boolean updateProductData(int productID, int userID) {
-//        if (productID < 1 || userID < 1) {
-//            return false;
-//        }
-//
-//        if (products.get(productID).addUser(userID)) {
-//            return true;
-//        }
-//
-//        return false;
-//    }
 
     public ArrayList<ProductNode> getProducts() {
         return products;

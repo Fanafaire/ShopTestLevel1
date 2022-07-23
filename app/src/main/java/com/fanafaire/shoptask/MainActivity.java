@@ -67,11 +67,28 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
 
-            if (allProducts.get(productID).addUser(userID)) {
+            if (allProducts.get(productID -1).addUser(userID)) {
                 return true;
             }
 
         return false;
+    }
+
+    public boolean addUserProd(int productID, int userID) {
+        if (productID < 1 || userID < 1) {
+            return false;
+        }
+
+        if (allUsers.get(userID - 1).addProduct(productID)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public void changeAmount(int userID, int price) {
+        int newAmount = allUsers.get(userID - 1).getAmount() - price;
+        allUsers.get(userID - 1).setAmount(newAmount);
     }
 
     @Override
