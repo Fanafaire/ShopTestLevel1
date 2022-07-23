@@ -54,10 +54,6 @@ public class ProdUserFragment extends Fragment {
 
                     users = getUsersByIDs(currProduct.getUsers());
 
-                    ArrayList<ProductNode> oneProd = new ArrayList<>(); // magic
-
-                    oneProd.add(currentProducts.get(productID));
-
                     recyclerView = (RecyclerView) root.findViewById(R.id.recyclerView);
                     recyclerView.setHasFixedSize(true);
                     LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());

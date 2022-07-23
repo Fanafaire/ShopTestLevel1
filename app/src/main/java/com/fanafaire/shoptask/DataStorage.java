@@ -21,6 +21,14 @@ public class DataStorage {
         products.get(1).addUser(2);
         products.get(2).addUser(2);
         products.get(1).addUser(1);
+
+
+        users.get(1).addProduct(1);
+        users.get(1).addProduct(1);
+        users.get(1).addProduct(2);
+
+        users.get(2).addProduct(3);
+        users.get(2).addProduct(3);
     }
 
 //    public boolean updateProductData(int productID, int userID) {

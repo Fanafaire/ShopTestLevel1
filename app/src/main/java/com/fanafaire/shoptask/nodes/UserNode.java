@@ -1,7 +1,7 @@
 package com.fanafaire.shoptask.nodes;
 
 import java.io.Serializable;
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class UserNode implements Serializable {
 
@@ -9,7 +9,7 @@ public class UserNode implements Serializable {
     private String firstName = "test";
     private String secondName = "test";
     private int amount = 0;
-    private HashMap<Integer, Integer> products;
+    private ArrayList<Integer> products;
 
     public UserNode(int id, String firstName, String secondName, int price){
 
@@ -17,7 +17,7 @@ public class UserNode implements Serializable {
         this.firstName = firstName;
         this.secondName = secondName;
         this.amount = price;
-        this.products = new HashMap<>();
+        this.products = new ArrayList<>();
     }
 
     public boolean addProduct(int productID) {
@@ -25,32 +25,18 @@ public class UserNode implements Serializable {
             return false;
         }
 
-        if(products.size() == 0 || !products.containsKey(productID)){
-            products.put(productID, 1);
+        products.add(productID);
 
-            return true;
-        }
-
-        if (products.containsKey(productID)){
-            products.put(productID, products.get(productID) + 1);
-
-            return true;
-        }
-
-        return false;
+        return true;
     }
 
-    public int[][] getProducts() {
+    public int[] getProducts() {
 
-        if(products.size() != 0) {
-            int[][] result = new int[products.size()][2];
+        if (products.size() != 0){
+            int[] result = new int[products.size()];
 
-            int i = 0;
-            for (int key: products.keySet()) {
-                result[i][0] = key;
-                result[i][1] = products.get(key);
-
-                i ++;
+            for (int i = 0; i < products.size(); i++) {
+                result[i] = products.get(i);
             }
 
             return result;
