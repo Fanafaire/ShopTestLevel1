@@ -2,7 +2,10 @@ package com.fanafaire.shoptask;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Toast;
 
+import com.fanafaire.shoptask.nodes.ProductNode;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.navigation.NavController;
@@ -14,14 +17,25 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.fanafaire.shoptask.databinding.ActivityMainBinding;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
 
+    public ArrayList<ProductNode> allProducts;
+    public ProductNode allUsers;
+
+    public DataStorage dataStorage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Initiate Data Storage
+        dataStorage = new DataStorage();
+        allProducts = dataStorage.getProducts();
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -39,6 +53,22 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+    }
+
+    public ArrayList<ProductNode> getProducts() {
+        return allProducts;
+    }
+
+    public boolean addProdUser(int productID, int userID) {
+            if (productID < 1 || userID < 1) {
+                return false;
+            }
+
+            if (allProducts.get(productID).addUser(userID)) {
+                return true;
+            }
+
+        return false;
     }
 
     @Override

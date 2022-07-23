@@ -1,5 +1,6 @@
 package com.fanafaire.shoptask.ui.home;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,12 +11,15 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.fanafaire.shoptask.DataStorage;
+import com.fanafaire.shoptask.MainActivity;
 import com.fanafaire.shoptask.R;
 import com.fanafaire.shoptask.adapter.NodeAdapter;
 //import com.fanafaire.shoptask.databinding.FragmentHomeBinding;
 import com.fanafaire.shoptask.nodes.ProductNode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class HomeFragment extends Fragment {
 
@@ -36,18 +40,15 @@ public class HomeFragment extends Fragment {
         NodeAdapter adapter = new NodeAdapter(getContext(), setInitialData());
         recyclerView.setAdapter(adapter);
 
+
+//        ((MainActivity)getActivity()).addProdUser(2, 3);
+//        System.out.println(Arrays.toString(((MainActivity) getActivity()).getProducts().get(2).getUsers()));
+
         return root;
     }
 
     private ArrayList<ProductNode> setInitialData(){
-        ArrayList<ProductNode> productList = new ArrayList<>();
-        productList.add(new ProductNode (1, "Product 1", 10));
-        productList.add(new ProductNode (2, "Product 2", 15));
-        productList.add(new ProductNode (3, "Product 3", 40));
-        productList.add(new ProductNode (4, "Product 4", 5));
-        productList.add(new ProductNode (5, "Product 5", 100));
-
-        return productList;
+        return ((MainActivity)getActivity()).getProducts();
     }
 
     @Override

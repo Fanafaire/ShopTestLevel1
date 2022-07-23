@@ -10,12 +10,14 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.fanafaire.shoptask.MainActivity;
 import com.fanafaire.shoptask.R;
 import com.fanafaire.shoptask.adapter.NodeAdapter;
 //import com.fanafaire.shoptask.databinding.FragmentGalleryBinding;
 import com.fanafaire.shoptask.nodes.ProductNode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class GalleryFragment extends Fragment {
 
@@ -35,6 +37,7 @@ public class GalleryFragment extends Fragment {
         NodeAdapter adapter = new NodeAdapter(getContext(), setInitialData());
         recyclerView.setAdapter(adapter);
 
+//        System.out.println(Arrays.toString(((MainActivity) getActivity()).getProducts().get(2).getUsers()));
         return root;
     }
 
