@@ -35,20 +35,11 @@ public class GalleryFragment extends Fragment {
         UserNodeAdapter adapter = new UserNodeAdapter(getContext(), setInitialData());
         recyclerView.setAdapter(adapter);
 
-//        System.out.println(Arrays.toString(((MainActivity) getActivity()).getProducts().get(2).getUsers()));
         return root;
     }
 
     private ArrayList<UserNode> setInitialData(){
         return ((MainActivity)getActivity()).getUsers();
-//        ArrayList<ProductNode> productList = new ArrayList<>();
-//        productList.add(new ProductNode (1, "First Name 1" + "Second Name 1", 1500));
-//        productList.add(new ProductNode (2, "First Name 2" + "Second Name 2", 10));
-//        productList.add(new ProductNode (3, "First Name 3" + "Second Name 3", 50));
-//        productList.add(new ProductNode (4, "First Name 4" + "Second Name 4", 500));
-//        productList.add(new ProductNode (5, "First Name 5" + "Second Name 5", 100));
-
-//        return productList;
     }
 
     @Override

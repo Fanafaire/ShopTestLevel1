@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.fanafaire.shoptask.MainActivity;
 import com.fanafaire.shoptask.R;
-import com.fanafaire.shoptask.adapter.ProductsNodeAdapter;
+import com.fanafaire.shoptask.adapter.UserNodeAdapter;
 import com.fanafaire.shoptask.nodes.ProductNode;
 import com.fanafaire.shoptask.nodes.UserNode;
 
@@ -51,6 +51,7 @@ public class ProdUserFragment extends Fragment {
 
                     // Add Users info recyclerView
                     ArrayList<UserNode> users = new ArrayList<>();
+
                     users = getUsersByIDs(currProduct.getUsers());
 
                     ArrayList<ProductNode> oneProd = new ArrayList<>(); // magic
@@ -62,7 +63,7 @@ public class ProdUserFragment extends Fragment {
                     LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
                     recyclerView.setLayoutManager(layoutManager);
 
-                    ProductsNodeAdapter adapter = new ProductsNodeAdapter(getContext(), oneProd);
+                    UserNodeAdapter adapter = new UserNodeAdapter(getContext(), users);
                     recyclerView.setAdapter(adapter);
 
                     Toast.makeText(getContext(), "Test", Toast.LENGTH_SHORT).show();
@@ -73,12 +74,19 @@ public class ProdUserFragment extends Fragment {
     }
 
     private ArrayList<UserNode> getUsersByIDs(int[] users) {
-        ArrayList<UserNode> allUsers = ((MainActivity) getActivity()).getUsers();;
         ArrayList<UserNode> currentUsers = new ArrayList<>();
 
+        if(users == null){
+            currentUsers.add(new UserNode(0, "No Users", "", 0));
+        } else {
+            ArrayList<UserNode> allUsers = ((MainActivity) getActivity()).getUsers();;
 
+            for(int i = 0; i < users.length; i++){
+                currentUsers.add(allUsers.get(users[i]));
+            }
+        }
 
-        return null;
+        return currentUsers;
     }
 
     private void addProductInfo(View root, ProductNode productNode) {
