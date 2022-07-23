@@ -57,16 +57,16 @@
                 android:autofillHints="" />
         </LinearLayout>
 
-<!--        <Button-->
-<!--            android:id="@+id/buy_button"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_weight="1"-->
-<!--            android:background="#B3FFFFFF"-->
-<!--            android:clickable="true"-->
-<!--            android:text="@string/menu_buy"-->
-<!--            android:textColor="#EFEBE9"-->
-<!--            android:focusable="true" />-->
+        <Button
+            android:id="@+id/buy_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#B3FFFFFF"
+            android:clickable="true"
+            android:text="@string/menu_buy"
+            android:textColor="#EFEBE9"
+            android:focusable="true" />
     </LinearLayout>
 
     <TextView
