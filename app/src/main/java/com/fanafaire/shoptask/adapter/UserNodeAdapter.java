@@ -9,17 +9,17 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.fanafaire.shoptask.R;
-import com.fanafaire.shoptask.nodes.ProductNode;
+import com.fanafaire.shoptask.nodes.UserNode;
 
 import java.util.ArrayList;
 
-public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.ViewHolder>{
+public class UserNodeAdapter extends RecyclerView.Adapter<UserNodeAdapter.ViewHolder>{
 
     private final LayoutInflater inflater;
-    private final ArrayList<ProductNode> products;
+    private final ArrayList<UserNode> users;
 
-    public NodeAdapter(Context context, ArrayList<ProductNode> products) {
-        this.products = products;
+    public UserNodeAdapter(Context context, ArrayList<UserNode> users) {
+        this.users = users;
         this.inflater = LayoutInflater.from(context);
     }
     @Override
@@ -30,16 +30,16 @@ public class NodeAdapter extends RecyclerView.Adapter<NodeAdapter.ViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(NodeAdapter.ViewHolder holder, int position) {
-        ProductNode product = products.get(position);
-        holder.idView.setText(Integer.toString(product.getId()));
-        holder.nameView.setText(product.getName());
-        holder.priceView.setText(Integer.toString(product.getPrice()));
+    public void onBindViewHolder(UserNodeAdapter.ViewHolder holder, int position) {
+        UserNode user = users.get(position);
+        holder.idView.setText(Integer.toString(user.getId()));
+        holder.nameView.setText(user.getFullName());
+        holder.priceView.setText(Integer.toString(user.getAmount()));
     }
 
     @Override
     public int getItemCount() {
-        return products.size();
+        return users.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

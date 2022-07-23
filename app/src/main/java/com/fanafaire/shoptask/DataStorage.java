@@ -16,7 +16,11 @@ public class DataStorage {
     public DataStorage(){
         products = setProductsData();
         users = setUsersData();
-        this.context = context;
+//        this.context = context;
+
+        products.get(1).addUser(2);
+        products.get(2).addUser(2);
+        products.get(1).addUser(1);
     }
 
 //    public boolean updateProductData(int productID, int userID) {

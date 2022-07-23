@@ -2,20 +2,18 @@ package com.fanafaire.shoptask;
 
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.View;
-import android.widget.Toast;
 
-import com.fanafaire.shoptask.nodes.ProductNode;
-import com.google.android.material.navigation.NavigationView;
-
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.fanafaire.shoptask.databinding.ActivityMainBinding;
+import com.fanafaire.shoptask.nodes.ProductNode;
+import com.fanafaire.shoptask.nodes.UserNode;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
@@ -25,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
 
     public ArrayList<ProductNode> allProducts;
-    public ProductNode allUsers;
+    public ArrayList<UserNode> allUsers;
 
     public DataStorage dataStorage;
 
@@ -36,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         // Initiate Data Storage
         dataStorage = new DataStorage();
         allProducts = dataStorage.getProducts();
+        allUsers  = dataStorage.getUsers();
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -57,6 +56,10 @@ public class MainActivity extends AppCompatActivity {
 
     public ArrayList<ProductNode> getProducts() {
         return allProducts;
+    }
+
+    public ArrayList<UserNode> getUsers() {
+        return allUsers;
     }
 
     public boolean addProdUser(int productID, int userID) {

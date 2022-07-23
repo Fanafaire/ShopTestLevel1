@@ -1,6 +1,5 @@
 package com.fanafaire.shoptask.ui.home;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,15 +10,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.fanafaire.shoptask.DataStorage;
 import com.fanafaire.shoptask.MainActivity;
 import com.fanafaire.shoptask.R;
-import com.fanafaire.shoptask.adapter.NodeAdapter;
+import com.fanafaire.shoptask.adapter.ProductsNodeAdapter;
 //import com.fanafaire.shoptask.databinding.FragmentHomeBinding;
 import com.fanafaire.shoptask.nodes.ProductNode;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class HomeFragment extends Fragment {
 
@@ -37,7 +34,7 @@ public class HomeFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
 
-        NodeAdapter adapter = new NodeAdapter(getContext(), setInitialData());
+        ProductsNodeAdapter adapter = new ProductsNodeAdapter(getContext(), setInitialData());
         recyclerView.setAdapter(adapter);
 
 

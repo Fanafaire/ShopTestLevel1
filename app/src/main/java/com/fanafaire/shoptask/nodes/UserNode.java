@@ -67,6 +67,10 @@ public class UserNode implements Serializable {
         this.id = id;
     }
 
+    public String getFullName() {
+        return firstName + " " + secondName;
+    }
+
     public String getFirstName() {
         return firstName;
     }

@@ -53,14 +53,16 @@
             android:textColorHint="#757575" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/find_button"
             android:layout_width="80dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#661976D2"
             android:fontFamily="sans-serif-medium"
             android:text="@string/text_but_find"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:clickable="true"
+            android:focusable="true"/>
 
     </LinearLayout>
 
